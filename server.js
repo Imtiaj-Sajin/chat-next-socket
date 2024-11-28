@@ -3,7 +3,7 @@ const { Server } = require("socket.io");
 // Create a Socket.IO server
 const io = new Server(3001, {
   cors: {
-    origin: "https://5a80-43-230-122-109.ngrok-free.app", // Allow requests from your Next.js app
+    origin: ["https://chat-next-socket-5k6dsbkle-imtiajsajins-projects.vercel.app","https://5a80-43-230-122-109.ngrok-free.app","http://localhost:3000"], // Allow requests from your Next.js app
     methods: ["GET", "POST"],
   },
 });

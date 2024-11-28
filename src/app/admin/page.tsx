@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 
 // Connect to the server
-const socket = io("https://chat-next-socket.onrender.com");
+const socket = io("https://j7f0x0n5-3001.asse.devtunnels.ms/");
 
 export default function Home() {
   const [username, setUsername] = useState("");
