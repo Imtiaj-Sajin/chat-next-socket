@@ -31,20 +31,22 @@ export default function Home() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1>Simple Chat</h1>
+      <h1>user Naame</h1>
       <div style={{ marginBottom: "20px" }}>
         <input
           type="text"
           placeholder="Enter your username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          style={{ marginRight: "10px" }}
+          style={{ marginRight: "10px", color:'black'}}
         />
         <input
           type="text"
           placeholder="Enter your message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          style={{ marginRight: "10px", color:'black',width:'60%'}}
+
         />
         <button onClick={sendMessage} style={{ marginLeft: "10px" }}>
           Send
