@@ -55,7 +55,9 @@ export default function Home() {
       <div style={{ border: "1px solid #ccc", padding: "10px", height: "300px", overflowY: "auto" }}>
         {messages.map((msg, index) => (
           <div key={index}>
-            <strong>{msg.username}:</strong> {msg.message}{socket.id}
+            <strong>{msg.username}:</strong> {msg.message}  
+            {/* <em style={{ color: "gray" }}>(Sender ID: {socket.id})</em> */}
+
           </div>
         ))}
       </div>
