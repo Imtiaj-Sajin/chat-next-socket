@@ -3,7 +3,21 @@ const { Server } = require("socket.io");
 // Create a Socket.IO server
 const io = new Server(3001, {
   cors: {
-    origin: ["https://chat-next-socket-5k6dsbkle-imtiajsajins-projects.vercel.app","https://chat-next-socket.vercel.app/","https://5a80-43-230-122-109.ngrok-free.app","https://web-chat-next-socket.onrender.com/","http://localhost:3000"], // Allow requests from your Next.js app
+    origin: (origin, callback) => {
+      console.log(`Request Origin: ${origin}`); // Log the origin of the request
+      const allowedOrigins = [
+        "https://chat-next-socket.vercel.app",
+        "https://chat-next-socket-5k6dsbkle-imtiajsajins-projects.vercel.app",
+        "https://5a80-43-230-122-109.ngrok-free.app",
+        "https://web-chat-next-socket.onrender.com",
+        "http://localhost:3000",
+      ];
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST"],
   },
 });
